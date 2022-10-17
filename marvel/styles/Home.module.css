@@ -7,3 +7,11 @@
   display: flex;
   justify-content: center;
 }
+
+.input input {
+  background: yellow;
+}
+
+.button button {
+  background: yellow;
+}
