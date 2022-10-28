@@ -5,13 +5,13 @@ import styles from './styles.module.css';
 
 function Mysuperhero() {
   const [resposta, setResposta] = useState();
-  // const [valores, setValores] = useState();
+  const [valores, setValores] = useState();
+  const [nameHeroes, setNameHeroes] = useState();
 
   // const escolherHero = (name) => {
-  //   setOpenModal(true);
   //   axios
   //     .get(
-  //       `https://pokeapi.co/api/v2/pokemon/${name}`,
+  //       `http://gateway.marvel.com/v1/public/characters?${name}&ts=1&apikey=06ead66137452ef75685fcdc895a6c0b&hash=2774d42849c52a2ec23f9b2298e41e7a`,
   //     )
   //     .then((preview) => {
   //       setValores(preview.data);
@@ -19,24 +19,27 @@ function Mysuperhero() {
   // }
 
   let url
-  let nameHeroes
+  let nameHero
 
   if (typeof window !== 'undefined') {
     url = window.location?.href;
-    nameHeroes = url.split("name=")[1];
+    nameHero = url.split("name=")[1];
   }
+
+  console.log(nameHeroes, 'nameHero')
 
 
   useEffect(() => {
     axios
       .get(
-        `http://gateway.marvel.com/v1/public/characters?&ts=1&apikey=06ead66137452ef75685fcdc895a6c0b&hash=2774d42849c52a2ec23f9b2298e41e7a`)
+        `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${nameHeroes}&ts=1&apikey=dfdfc06935a1fe33837da6934f7b5373&hash=f5a214e5c63b897dfe0ebc1a1185c936`)
       .then((response) => {
-        setResposta(response.data.data.results);
+        setResposta(response.data);
+        
       });
   }, [nameHeroes]);
 
-  console.log(resposta, 'heroes')
+  
 
   const handleClick = () => {
     window.location.href = "/";
@@ -55,11 +58,15 @@ function Mysuperhero() {
       </>
 
       <div>
+        {console.log(resposta, 'abacaxi')}
         <>
-          {resposta?.map((item) => {
+          {resposta && 
+          
+          resposta?.data?.results?.map((item) => {
+            {console.log(item, 'edu')}
             return (
               // eslint-disable-next-line react/jsx-key
-              <div className={styles.card} onClick={() => escolherHero(pokemons.name)}>
+              <div className={styles.card} onClick={() => escolherHero(item)}>
 
                 <div className={styles.nomes}>
                   <p>{item.name}</p>
