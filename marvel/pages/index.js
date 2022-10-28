@@ -25,15 +25,8 @@ function Home() {
           >Buscar</button>
         </div>
       </div>
-
-      <div className={styles.enter}>
-        <button onClick={() => window.location.href = `/heroes?name=${nameHeroes}`}>
-          Mysuperhero
-        </button>
-      </div>
     </div>
   );
 }
-
 
 export default Home;

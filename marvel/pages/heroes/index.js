@@ -5,8 +5,7 @@ import styles from './styles.module.css';
 
 function Mysuperhero() {
   const [resposta, setResposta] = useState();
-  const [valores, setValores] = useState();
-  const [nameHeroes, setNameHeroes] = useState();
+  const [nameHeroes] = useState();
 
 
   let url
@@ -36,38 +35,45 @@ function Mysuperhero() {
   };
 
   return (
-    <div className={styles.container}>
-      <>
-        <h1>Mysuperhero</h1>
-      </>
+    <container>
 
-      <>
-        <button onClick={handleClick}>
-          Voltar
-        </button>
-      </>
-
-      <div>
+      <div className={styles.container}>
         <>
-          {resposta &&
-
-            resposta?.data?.results?.map((item) => {
-              return (
-                // eslint-disable-next-line react/jsx-key
-                <div className={styles.card} onClick={() => escolherHero(item)}>
-
-                  <div className={styles.nomes}>
-                    <p>{item.name}</p>
-                    <p>{item.description}</p>
-                    <img src={`${item.thumbnail.path}.${item.thumbnail.extension}`}></img>
-                  </div>
-                </div>
-              );
-            })}
+          <h1>Mysuperhero</h1>
         </>
+
+        <>
+          <button onClick={handleClick}>
+            Voltar
+          </button>
+        </>
+
+        <div>
+          <>
+            {resposta &&
+
+              resposta?.data?.results?.map((item) => {
+                return (
+                  // eslint-disable-next-line react/jsx-key
+                  <div className={styles.card} onClick={() => escolherHero(item.name)}>
+
+                    <div className={styles.nomes}>
+                      <p>{item.name}</p>
+                      <p>{item.description}</p>
+                      <div className={styles.cards}>
+                        <img src={`${item.thumbnail.path}.${item.thumbnail.extension}`}></img>
+                      </div>
+                    </div>
+                  </div>
+
+                );
+              })}
+          </>
+        </div>
+
       </div>
 
-    </div>
+    </container>
 
   );
 }
