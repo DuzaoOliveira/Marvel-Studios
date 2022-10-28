@@ -8,6 +8,7 @@ function Mysuperhero() {
   const [valores, setValores] = useState();
   const [nameHeroes, setNameHeroes] = useState();
 
+
   let url
   let nameHero
 
@@ -58,12 +59,14 @@ function Mysuperhero() {
                   <div className={styles.nomes}>
                     <p>{item.name}</p>
                     <p>{item.description}</p>
+                    <img src={`${item.thumbnail.path}.${item.thumbnail.extension}`}></img>
                   </div>
                 </div>
               );
             })}
         </>
       </div>
+
     </div>
 
   );
