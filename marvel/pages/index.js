@@ -5,6 +5,8 @@ function Home() {
   const [name, setName] = useState('')
   const [nameHeroes, setNameHeroes] = useState();
 
+  console.log(nameHeroes)
+
   return (
     <div className={styles.container}>
 

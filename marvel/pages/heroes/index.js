@@ -26,7 +26,7 @@ function Mysuperhero() {
       .then((response) => {
         setResposta(response.data);
       });
-  }, [nameHeroes]);
+  }, [nameHero, nameHeroes]);
 
   console.log(resposta, 'ress')
 
@@ -35,45 +35,53 @@ function Mysuperhero() {
   };
 
   return (
-    <container>
 
-      <div className={styles.container}>
-        <>
-          <h1>Mysuperhero</h1>
-        </>
 
-        <>
-          <button onClick={handleClick}>
-            Voltar
-          </button>
-        </>
+    <div className={styles.container}>
 
-        <div>
-          <>
-            {resposta &&
-
-              resposta?.data?.results?.map((item) => {
-                return (
-                  // eslint-disable-next-line react/jsx-key
-                  <div className={styles.card} onClick={() => escolherHero(item.name)}>
-
-                    <div className={styles.nomes}>
-                      <p>{item.name}</p>
-                      <p>{item.description}</p>
-                      <div className={styles.cards}>
-                        <img src={`${item.thumbnail.path}.${item.thumbnail.extension}`}></img>
-                      </div>
-                    </div>
-                  </div>
-
-                );
-              })}
-          </>
-        </div>
-
+      <div className={styles.h1}>
+        <h1>Mysuperhero</h1>
       </div>
 
-    </container>
+      <div className={styles.voltar}>
+        <button onClick={handleClick}>
+          Voltar
+        </button>
+      </div>
+
+      <div className={styles.boxcard}>
+        <>
+          {resposta &&
+
+            resposta?.data?.results?.map((item) => {
+              return (
+                // eslint-disable-next-line react/jsx-key
+                <div className={styles.box}>
+
+
+
+                  {/* <div className={styles.nomes}>
+                    <p>{item.name}</p>
+                  </div> */}
+
+                  {/* <button onClick={() => window.location.href = "/heroes?name=$"}>
+                    <p>{item.name}</p>
+                  </button> */}
+
+                  <div className={styles.cards} onClick={() => window.location.href = "/historia"}>
+
+                    <img src={`${item.thumbnail.path}.${item.thumbnail.extension}`}></img>
+                  </div>
+                </div>
+
+              );
+            })}
+        </>
+      </div>
+
+    </div>
+
+
 
   );
 }
