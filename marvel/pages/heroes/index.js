@@ -7,7 +7,6 @@ function Mysuperhero() {
   const [resposta, setResposta] = useState();
   const [nameHeroes] = useState();
 
-
   let url
   let nameHero
 
@@ -17,7 +16,6 @@ function Mysuperhero() {
   }
 
   console.log(nameHero, 'nameHero')
-
 
   useEffect(() => {
     axios
@@ -36,7 +34,6 @@ function Mysuperhero() {
 
   return (
 
-
     <div className={styles.container}>
 
       <div className={styles.h1}>
@@ -54,21 +51,18 @@ function Mysuperhero() {
           {resposta &&
 
             resposta?.data?.results?.map((item) => {
+
+              console.log(item, 'item')
+
               return (
                 // eslint-disable-next-line react/jsx-key
                 <div className={styles.box}>
 
-
-
-                  {/* <div className={styles.nomes}>
+                  <button onClick={() => window.location.href = "/heroes?name"}>
                     <p>{item.name}</p>
-                  </div> */}
+                  </button>
 
-                  {/* <button onClick={() => window.location.href = "/heroes?name=$"}>
-                    <p>{item.name}</p>
-                  </button> */}
-
-                  <div className={styles.cards} onClick={() => window.location.href = "/historia"}>
+                  <div className={styles.cards} onClick={() => window.location.href = `/historia?id=${item.id}`}>
 
                     <img src={`${item.thumbnail.path}.${item.thumbnail.extension}`}></img>
                   </div>
