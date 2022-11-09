@@ -27,7 +27,14 @@ function Home() {
           >Buscar</button>
         </div>
       </div>
+
+      {/* <div className={styles.back}>
+        <img src='https://free4kwallpapers.com/uploads/originals/2020/04/29/marvel-avengers-wallpaper.jpg'></img>
+      </div> */}
+
+      <div />
     </div>
+
 
   );
 }

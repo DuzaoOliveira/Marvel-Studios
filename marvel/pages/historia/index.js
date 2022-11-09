@@ -33,7 +33,7 @@ function Historia() {
 
 
   return (
-    <container>
+    <div className={styles.container}>
 
       {console.log(open, 'open')}
       <div className={styles.h1}>
@@ -46,7 +46,9 @@ function Historia() {
         </button>
       </div>
 
-      {open &&
+      {
+
+        open &&
         open.map((item, index) => {
           return (
             <div key={index}>
@@ -65,43 +67,53 @@ function Historia() {
               </div>
               <div className={styles.characters}>
 
+                {item.comics.returned !== 0 &&
 
-                <div className={styles.comics}>
-                  <h1>Comics</h1>
-                  {item.comics.items.map((characters, index) => {
-                    return (
-                      <p key={index}>{characters.name}</p>
-                    )
-                  })}
-                </div>
+                  <div>
+                    <h2>Comics</h2>
+                    {item.comics.items.map((characters, index) => {
+                      return (
+                        <p key={index}>{characters.name}</p>
+                      );
+                    })}
+                  </div>
+                }
 
-                <div className={styles.events}>
-                  <h1>Eventos</h1>
-                  {item.events.items.map((characters, index) => {
-                    return (
-                      <p key={index}>{characters.name}</p>
-                    )
-                  })}
-                </div>
+                {item.events.returned !== 0 &&
+                  <div>
+                    <h2>Eventos</h2>
+                    {item.events.items.map((characters, index) => {
+                      return (
+                        <p key={index}>{characters.name}</p>
+                      );
+                    })}
+                  </div>
+                }
 
-                <div className={styles.series}>
-                  <h2>Series</h2>
-                  {item.series.items.map((characters, index) => {
-                    return (
-                      <p key={index}>{characters.name}</p>
-                    )
-                  })}
-                </div>
+                {item.series.returned !== 0 &&
+                  <div>
+                    <h2>Series</h2>
+                    {item.series.items.map((characters, index) => {
+                      return (
+                        <p key={index}>{characters.name}</p>
+                      );
+                    })}
+                  </div>
+                }
 
-                <div className={styles.historias}>
-                  <h2>História</h2>
-                  {item.stories.items.map((characters, index) => {
-                    return (
-                      <p key={index}>{characters.name}</p>
-                    )
-                  })}
-                </div>
+                {item.stories.returned !== 0 &&
+
+                  <div>
+                    <h2>História</h2>
+                    {item.stories.items.map((characters, index) => {
+                      return (
+                        <p key={index}>{characters.name}</p>
+                      );
+                    })}
+                  </div>
+                }
               </div>
+
 
 
             </div>
@@ -109,7 +121,7 @@ function Historia() {
         })}
 
 
-    </container>
+    </div >
   );
 }
 

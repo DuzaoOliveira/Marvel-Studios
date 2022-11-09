@@ -1,16 +1,19 @@
+
+
 .container {
   margin: 0 auto;
   max-width: 1920px;
   width: 100%;
   background-image: url(https://free4kwallpapers.com/uploads/originals/2020/04/29/marvel-avengers-wallpaper.jpg);
   background-repeat: no-repeat;
-  background-size: 100%;
-  min-height: 957px
+  background-size: cover;
+  min-height: 100vh;
+  background-position: bottom;
 }
 
-.container img {
-height: 100%;
-}
+/* .back img {
+width: 100%;
+} */
 
 .title {
   text-align: center;
@@ -21,7 +24,6 @@ height: 100%;
 .input {
   display: flex;
   justify-content: center;
-  margin-top: 150px;
 }
 
 .input input {

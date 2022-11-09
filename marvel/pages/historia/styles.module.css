@@ -1,11 +1,19 @@
+.container {
+  background-color:#780103;
+  padding: 10px;
+}
+
 .h1 {
-color: white;
   text-align: center;
     font-size: 30px;
 }
 
-.voltar {
-  margin: 0px 66px;
+.voltar button {
+  width: 50px;
+    height: 20px;  
+    margin: 0px 40px; 
+    background: #fede00; 
+    border: none;
 }
 
 .name {
@@ -35,32 +43,27 @@ color: white;
   margin: 25px 25px;
 }
 
-.comics {
-  padding: 5px 10px;
-  width: 370px;
-}
-
-.events {
-  padding: 5px 10px;
-  width: 370px;
-}
-
-.series {
-  padding: 5px 10px;
-  width: 370px;
-}
-
-.historias{
-  padding: 5px 10px;
-  width: 370px;
-}
-
 .characters {
   display: flex;
-  justify-content: space-between
-  
-  ;
+  justify-content: space-between;
   padding: 5px 10px;
+  margin: 62px;
+}
+
+.characters div {
+  padding: 5px 10px;
+  width: 370px;
+  margin: 5px 5px;
+  background: black;
+  color: aliceblue;
+}
+
+.characters div p {
+  padding: 5px;
+}
+
+.characters div p {
+  padding: 5px;
 }
 
 .todos {
