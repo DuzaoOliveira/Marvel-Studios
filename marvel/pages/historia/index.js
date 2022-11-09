@@ -4,6 +4,7 @@ import axios from "axios";
 
 function Historia() {
   const [open, setOpen] = useState('');
+  // const [characters, setCaracters] = useState('');
 
   const handleClick = () => {
     window.location.href = "/";
@@ -17,7 +18,6 @@ function Historia() {
     idHistory = url.split("id=")[1];
   }
 
-  console.log(idHistory, 'history')
   useEffect(() => {
     axios
       .get(
@@ -47,30 +47,67 @@ function Historia() {
       </div>
 
       {open &&
-
-        open.map((item, comics) => {
-
-          { console.log(item, 'item') }
-
+        open.map((item, index) => {
           return (
-            // eslint-disable-next-line react/jsx-key
-            <div className={styles.box}>
-
-              <div className={styles.card2}>
-                <img src={`${item.thumbnail.path}.${item.thumbnail.extension}`}></img>
-              </div>
-
-              <div>
-                <div className={styles.name}>
-                  <p>{item.name}</p>
+            <div key={index}>
+              <div className={styles.box}>
+                <div className={styles.card2}>
+                  <img alt='heroi' src={`${item.thumbnail.path}.${item.thumbnail.extension}`} />
                 </div>
-                <p>{item.description}</p>
-                {/* <p>{item.modified}</p> */}
-              </div>
-            </div>
 
+                <div>
+                  <div className={styles.name}>
+                    <p>{item.name}</p>
+
+                  </div>
+                  <p>{item.description}</p>
+                </div>
+              </div>
+              <div className={styles.characters}>
+
+
+                <div className={styles.comics}>
+                  <h1>Comics</h1>
+                  {item.comics.items.map((characters, index) => {
+                    return (
+                      <p key={index}>{characters.name}</p>
+                    )
+                  })}
+                </div>
+
+                <div className={styles.events}>
+                  <h1>Eventos</h1>
+                  {item.events.items.map((characters, index) => {
+                    return (
+                      <p key={index}>{characters.name}</p>
+                    )
+                  })}
+                </div>
+
+                <div className={styles.series}>
+                  <h2>Series</h2>
+                  {item.series.items.map((characters, index) => {
+                    return (
+                      <p key={index}>{characters.name}</p>
+                    )
+                  })}
+                </div>
+
+                <div className={styles.historias}>
+                  <h2>História</h2>
+                  {item.stories.items.map((characters, index) => {
+                    return (
+                      <p key={index}>{characters.name}</p>
+                    )
+                  })}
+                </div>
+              </div>
+
+
+            </div>
           );
         })}
+
 
     </container>
   );

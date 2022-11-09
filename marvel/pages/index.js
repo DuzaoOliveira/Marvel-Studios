@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from '../styles/Home.module.css'
+import Mysuperhero from './heroes/index';
 
 function Home() {
   const [name, setName] = useState('')
@@ -8,12 +9,11 @@ function Home() {
   console.log(nameHeroes)
 
   return (
+
     <div className={styles.container}>
 
-      <div className={styles.logohome}>
-        <img
-          src='https://www.g33kmania.com/wp-content/uploads/marvel-logo-personnages.jpg'
-          alt="logo marvel" />
+      <div className={styles.title}>
+        <h1>Mysuperhero</h1>
       </div>
 
       <div className={styles.input}>
@@ -28,6 +28,7 @@ function Home() {
         </div>
       </div>
     </div>
+
   );
 }
 

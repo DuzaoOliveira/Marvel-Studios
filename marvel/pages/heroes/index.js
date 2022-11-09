@@ -58,9 +58,10 @@ function Mysuperhero() {
                 // eslint-disable-next-line react/jsx-key
                 <div className={styles.box}>
 
-                  <button onClick={() => window.location.href = "/heroes?name"}>
+                  <div className={styles.nome}>
                     <p>{item.name}</p>
-                  </button>
+                  </div>
+
 
                   <div className={styles.cards} onClick={() => window.location.href = `/historia?id=${item.id}`}>
 

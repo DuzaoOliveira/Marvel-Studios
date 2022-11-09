@@ -1,11 +1,27 @@
-.logohome {
-  display: flex;
-  justify-content: center;
+.container {
+  margin: 0 auto;
+  max-width: 1920px;
+  width: 100%;
+  background-image: url(https://free4kwallpapers.com/uploads/originals/2020/04/29/marvel-avengers-wallpaper.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  min-height: 957px
+}
+
+.container img {
+height: 100%;
+}
+
+.title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 30px;
 }
 
 .input {
   display: flex;
   justify-content: center;
+  margin-top: 150px;
 }
 
 .input input {
@@ -15,3 +31,4 @@
 .button button {
   background: yellow;
 }
+

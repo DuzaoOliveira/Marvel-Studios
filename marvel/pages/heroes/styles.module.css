@@ -1,11 +1,13 @@
 .container {
     width: 100%;
     margin: 0 auto;
+    background-color:#780103
 }
 
 .h1 {
     text-align: center;
     font-size: 30px;
+    color: antiquewhite;
 }
 
 .voltar button {
@@ -27,9 +29,15 @@
     height: 300px;
 }
 
-.nomes p {
+.nome p {
     text-align: center;
+    color: aliceblue;
 }
+
+/* .name {
+    text-align: center;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+} */
 
 .box {
     display: flex;
