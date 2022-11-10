@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styles from './styles.module.css';
+import Head from "next/head";
 
 function Mysuperhero() {
   const [resposta, setResposta] = useState();
@@ -31,6 +32,12 @@ function Mysuperhero() {
   return (
 
     <div className={styles.container}>
+
+      <Head>
+        <title>Heroes Marvel</title>
+        <meta name="Marvel" content="Marvel" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
       <div className={styles.h1}>
         <h1>Mysuperhero</h1>

@@ -11,7 +11,7 @@ function Home() {
     <div className={styles.container}>
 
       <Head>
-        <title>Marvel</title>
+        <title>Home Marvel</title>
         <meta name="Marvel" content="Marvel" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './styles.module.css';
 import axios from "axios";
+import Head from 'next/head';
 
 function Historia() {
   const [open, setOpen] = useState('');
@@ -32,7 +33,14 @@ function Historia() {
   }, [idHistory]);
 
   return (
+
     <div className={styles.container}>
+
+      <Head>
+        <title>Histórias</title>
+        <meta name="Marvel" content="Marvel" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
       <div className={styles.h1}>
         <h1>Mysuperhero</h1>
