@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
 import styles from '../styles/Home.module.css'
-import Mysuperhero from './heroes/index';
+import Head from 'next/head';
 
 function Home() {
   const [name, setName] = useState('')
   const [nameHeroes, setNameHeroes] = useState();
 
-  console.log(nameHeroes)
-
   return (
 
     <div className={styles.container}>
+
+      <Head>
+        <title>Marvel</title>
+        <meta name="Marvel" content="Marvel" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
       <div className={styles.title}>
         <h1>Mysuperhero</h1>
@@ -27,15 +31,8 @@ function Home() {
           >Buscar</button>
         </div>
       </div>
-
-      {/* <div className={styles.back}>
-        <img src='https://free4kwallpapers.com/uploads/originals/2020/04/29/marvel-avengers-wallpaper.jpg'></img>
-      </div> */}
-
       <div />
     </div>
-
-
   );
 }
 

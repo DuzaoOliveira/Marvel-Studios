@@ -15,8 +15,6 @@ function Mysuperhero() {
     nameHero = url.split("name=")[1];
   }
 
-  console.log(nameHero, 'nameHero')
-
   useEffect(() => {
     axios
       .get(
@@ -25,8 +23,6 @@ function Mysuperhero() {
         setResposta(response.data);
       });
   }, [nameHero, nameHeroes]);
-
-  console.log(resposta, 'ress')
 
   const handleClick = () => {
     window.location.href = "/";
@@ -52,8 +48,6 @@ function Mysuperhero() {
 
             resposta?.data?.results?.map((item) => {
 
-              console.log(item, 'item')
-
               return (
                 // eslint-disable-next-line react/jsx-key
                 <div className={styles.box}>
@@ -61,7 +55,6 @@ function Mysuperhero() {
                   <div className={styles.nome}>
                     <p>{item.name}</p>
                   </div>
-
 
                   <div className={styles.cards} onClick={() => window.location.href = `/historia?id=${item.id}`}>
 
