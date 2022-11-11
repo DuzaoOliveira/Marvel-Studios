@@ -12,7 +12,6 @@
   text-align: center;
   text-transform: uppercase;
   font-size: 30px;
-  color: #fff;
 }
 
 .input {
@@ -21,39 +20,44 @@
 }
 
 .input input {
-  background: yellow;
+  background: #F5ff00;
   width: 250px;
   height: 30px;
   margin-top: 20px;
 }
 
 .button button {
-  background: yellow;
+  background: #F5ff00;
   height: 34px;
 }
 
 @media screen and (max-width: 600px) {
   .container  {
     width: 1307px;
-    /* margin-top: 440px; */
-    background-image: url(https://i.pinimg.com/originals/9d/d6/3d/9dd63dfc0e3fe707b48784b70f855e31.jpg);
+    background-image: url(https://i.pinimg.com/originals/24/92/00/249200c431fe811110761709b303fcaf.jpg);
     height: 1973px;
     width: 960px;
     margin-top: 0px;
   }
 
+  .title h1 {
+   display: none;
+  }
+
   .input input {
-    width: 350px;
+    width: 300px;
     height: 50px;
     font-size: 35px;
-    margin-top: 10px;
+    /* margin-top: -10px; */
+    border-radius: 25px;
   }
 
   .button button {
-    width: 150px;
-    height: 55px;
-    font-size: 35px;
-    margin-top: 20px;
+    width: 100px;
+    height: 51px;
+    font-size: 27px;
+    margin-top: 130px;
+    border-radius: 25px;
   }
  
 }

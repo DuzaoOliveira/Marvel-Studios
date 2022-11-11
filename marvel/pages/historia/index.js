@@ -69,7 +69,7 @@ function Historia() {
                 </div>
 
                 <div>
-                  <p>{item.description}</p>
+                  <p>{item.description ? item.description : 'Sem informações'}</p>
                 </div>
               </div>
 
